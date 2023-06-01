@@ -66,4 +66,14 @@ public class MyDao {
 			return list.get(0);
 		}
 	}
+	
+	public Staff fetchStaff(int id)
+	{
+		return manager.find(Staff.class, id);
+	}
+	
+	public Doctor fetchDoctor(int id)
+	{
+		return manager.find(Doctor.class, id);
+	}
 }
