@@ -43,7 +43,7 @@ public class StaffSignup extends HttpServlet {
 
 			dao.saveStaff(staff);
 
-			resp.getWriter().print("<h1 style='color:green'>Staff Account Created Successfully</h1>");
+			resp.getWriter().print("<h1 style='color:green'>Staff Account Created Successfully, wait for Admin Approval</h1>");
 			resp.getWriter().print("<h1 style='color:blue'>Your Staff Id is : " + staff.getId() + "</h1>");
 			req.getRequestDispatcher("Login.html").include(req, resp);
 		} else {

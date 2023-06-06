@@ -76,4 +76,26 @@ public class MyDao {
 	{
 		return manager.find(Doctor.class, id);
 	}
+	
+	public void updateStaff(Staff staff) {
+		transaction.begin();
+		manager.merge(staff);
+		transaction.commit();
+	}
+	
+	public void updateDoctor(Doctor doctor) {
+		transaction.begin();
+		manager.merge(doctor);
+		transaction.commit();
+	}
+	
+	public List<Doctor> fetchAllDoctor()
+	{
+		return manager.createQuery("select x from Doctor x").getResultList();
+	}
+	
+	public List<Staff> fetchAllStaff()
+	{
+		return manager.createQuery("select x from Staff x").getResultList();
+	}
 }

@@ -48,7 +48,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 
 		dao.saveDoctor(doctor);
 
-		resp.getWriter().print("<h1 style='color:green'>Doctor Account Created Successfully</h1>");
+		resp.getWriter().print("<h1 style='color:green'>Doctor Account Created Successfully, wait for Admin Approval</h1>");
 		resp.getWriter().print("<h1 style='color:blue'>Your Doctor Id is : " + doctor.getId() + "</h1>");
 		req.getRequestDispatcher("Login.html").include(req, resp);
 	} else {

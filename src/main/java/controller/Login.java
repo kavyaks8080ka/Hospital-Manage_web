@@ -33,8 +33,14 @@ public class Login extends HttpServlet {
 			{
 				if(staff.getPassword().equals(password))
 				{
+					if(staff.isStatus()) {
 					resp.getWriter().print("<h1 style='color:green'>Login Success</h1>");
 					req.getRequestDispatcher("StaffHome.html").include(req, resp);
+					}
+					else {
+						resp.getWriter().print("<h1 style='color:red'>Wait for Admin approval</h1>");
+						req.getRequestDispatcher("Login.html").include(req, resp);
+					}
 				}
 				else {
 					resp.getWriter().print("<h1 style='color:red'>Incorrect Password</h1>");
@@ -45,8 +51,15 @@ public class Login extends HttpServlet {
 			{
 				if(doctor.getPassword().equals(password))
 				{
+					if(doctor.isStatus())
+					{
 					resp.getWriter().print("<h1 style='color:green'>Login Success</h1>");
 					req.getRequestDispatcher("DoctorHome.html").include(req, resp);
+					}
+					else {
+						resp.getWriter().print("<h1 style='color:red'>Wait for Admin approval</h1>");
+						req.getRequestDispatcher("Login.html").include(req, resp);
+					}
 				}
 				else {
 					resp.getWriter().print("<h1 style='color:red'>Incorrect Password</h1>");
