@@ -9,7 +9,7 @@
 <title>Approve doctor</title>
 </head>
 <body>
-<% List<Doctor> list=(List<Doctor	>)request.getAttribute("list"); %>
+<% List<Doctor> list=(List<Doctor>)request.getAttribute("list"); %>
 <table border="1">
 <tr>
 <th>ID</th>

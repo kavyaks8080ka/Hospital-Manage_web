@@ -34,6 +34,7 @@ public class Login extends HttpServlet {
 				if(staff.getPassword().equals(password))
 				{
 					if(staff.isStatus()) {
+					req.getSession().setAttribute("staff", staff);
 					resp.getWriter().print("<h1 style='color:green'>Login Success</h1>");
 					req.getRequestDispatcher("StaffHome.html").include(req, resp);
 					}
@@ -53,6 +54,7 @@ public class Login extends HttpServlet {
 				{
 					if(doctor.isStatus())
 					{
+					req.getSession().setAttribute("doctor", doctor);
 					resp.getWriter().print("<h1 style='color:green'>Login Success</h1>");
 					req.getRequestDispatcher("DoctorHome.html").include(req, resp);
 					}
@@ -70,6 +72,7 @@ public class Login extends HttpServlet {
 			{
 				if("999999".equals(password))
 				{
+					req.getSession().setAttribute("admin", "admin");
 					resp.getWriter().print("<h1 style='color:green'>Login Success</h1>");
 					req.getRequestDispatcher("AdminHome.html").include(req, resp);
 				}

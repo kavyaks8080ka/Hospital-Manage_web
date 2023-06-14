@@ -16,6 +16,8 @@ import dto.Staff;
 public class FetchAllStaff extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		if(req.getSession().getAttribute("admin")!=null)
+		{
 		MyDao dao=new MyDao();
 		List<Staff> list=dao.fetchAllStaff();
 		if(list.isEmpty()){
@@ -25,6 +27,11 @@ public class FetchAllStaff extends HttpServlet {
 		else{
 			req.setAttribute("list", list);
 			req.getRequestDispatcher("ApproveStaff.jsp").forward(req, resp);
+		}
+		}
+		else{
+			resp.getWriter().print("<h1 style='color:red'>Session Expired, Login again</h1>");
+			req.getRequestDispatcher("Login.html").include(req, resp);
 		}
 	}
 }
