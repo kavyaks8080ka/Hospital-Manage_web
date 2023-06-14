@@ -121,5 +121,14 @@ public class MyDao {
 	public Doctor fetchDoctor(int id) {
 		return manager.find(Doctor.class, id);
 	}
+	
+	public Patient fetchPatient(int id) {
+		return manager.find(Patient.class, id);
+	}
+	
+	public List<Doctor> fetchAvailableDoctors()
+	{
+		return manager.createQuery("select x from Doctor x where available=true").getResultList();
+	}
 
 }

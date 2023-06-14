@@ -1,3 +1,4 @@
+<%@page import="org.apache.commons.codec.binary.Base64"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="dto.Patient"%>
 <%@page import="java.util.List"%>
@@ -12,7 +13,7 @@
 <body>
 	<%
 		List<Patient> list = (List<Patient>) request.getAttribute("list");
-	%>
+	%> 
 	<table border="1">
 		<tr>
 			<th>ID</th>
@@ -34,13 +35,15 @@
 			<%
 			String base64=Base64.encodeBase64String(patient.getPicture());
 			%>
-			<img alt="unknown" src="data:image/jpeg;base64,<%=base64%>">
+			<img height="100px" width="100px" alt="unknown" src="data:image/jpeg;base64,<%=base64%>">
 			</th>
-			<th><button>Book Appointment</button></th>
+			<th><a href="AppointmentForm.jsp?id=<%=patient.getId()%>"><button>Book Appointment</button></a></th>
 		</tr>
 		<%
 			}
 		%>
 	</table>
+	<br><br>
+	<a href="BookAppointment.jsp"><button>Back</button></a>
 </body>
 </html>

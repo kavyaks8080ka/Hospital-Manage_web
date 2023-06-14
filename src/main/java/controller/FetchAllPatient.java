@@ -27,7 +27,7 @@ public class FetchAllPatient extends HttpServlet {
 			if(list.isEmpty())
 			{
 				resp.getWriter().print("<h1 style='color:red'>No Patient Data Found</h1>");
-				req.getRequestDispatcher("BookApointment.jsp").include(req, resp);
+				req.getRequestDispatcher("BookAppointment.jsp").include(req, resp);
 			}
 			else{
 				req.setAttribute("list", list);

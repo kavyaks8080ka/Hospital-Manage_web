@@ -14,7 +14,9 @@
 }else{
 	%>
 <a href="fetchallpatient"><button>View All Patient</button></a><br><br>
-<a><button>Fetch Patient By Id</button></a><br><br>
+<a href="FetchById.html"><button>Fetch Patient By Id</button></a><br><br>
 <%} %>
+<a href="StaffHome.html"><button>Back</button></a>
+
 </body>
 </html>
