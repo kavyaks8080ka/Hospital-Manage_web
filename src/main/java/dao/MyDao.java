@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import dto.Appointment;
 import dto.Doctor;
 import dto.Patient;
 import dto.Staff;
@@ -129,6 +130,12 @@ public class MyDao {
 	public List<Doctor> fetchAvailableDoctors()
 	{
 		return manager.createQuery("select x from Doctor x where available=true").getResultList();
+	}
+
+	public void saveAppointment(Appointment appointment) {
+		transaction.begin();
+		manager.persist(appointment);
+		transaction.commit();
 	}
 
 }

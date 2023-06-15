@@ -32,7 +32,7 @@ if(list.isEmpty())
 }
 else{
 %>
-<form>
+<form action="bookappointment" method="post">
 Patient Id: <input type="text" name="pid" value="<%=pid%>" readonly="readonly"><br>
 Patient Name: <input type="text" name="pname" value="<%=patient.getName()%>" readonly="readonly"><br>
 Staff Name: <input type="text" name="staffname" value="<%=staff.getName()%>" readonly="readonly"><br>
@@ -43,6 +43,8 @@ Select Doctor:
 <option value="<%=doctor.getId()%>"><%=doctor.getName()%> (<%=doctor.getSpecialization()%>)</option>
 <%} %>
 </select>
+<br>
+<button>Fix Appointment</button><button type="reset">Cancel</button>
 </form>
 <%}} %>
 </body>
