@@ -24,14 +24,34 @@
 	%>
 
 	<h1>Appointment Details</h1>
-	<%for(Appointment appointment:list){ %>
-	<h1>Appointment Id: <%=appointment.getId() %></h1>
-	<h1>Problem: <%=appointment.getProblem() %></h1>
-	<h1>Doctor: <%=appointment.getDoctor().getName() %></h1>
-	<h1>Appointment Date: <%=appointment.getTime() %></h1>
-	
-	<%
-	}	}
-	%>
+	<table border="1">
+		<tr>
+			<th>Appointment Id</th>
+			<th>Patient</th>
+			<th>Problem</th>
+			<th>Doctor</th>
+			<th>Appointment Date</th>
+		</tr>
+		<%
+			for (Appointment appointment : list) {
+		%>
+		<tr>
+			<th><%=appointment.getId()%></th>
+			<th><%=appointment.getPatient().getName()%></th>
+			<th><%=appointment.getProblem()%></th>
+			<th><%=appointment.getDoctor().getName()%></th>
+			<th>
+			<%if(appointment.getTime()==null) {%>
+			Not Yet Visited Doctor
+			<%}else{ %>
+			<%=appointment.getTime()%>
+			<%} %>
+			</th>
+		</tr>
+		<%}%>
+	</table>
+	<br>
+	<a href="adminfetcallpatient"><button>Back</button></a>
+	<%} %>
 </body>
 </html>

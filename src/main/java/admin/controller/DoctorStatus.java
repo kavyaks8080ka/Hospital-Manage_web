@@ -1,4 +1,4 @@
-package controller;
+package admin.controller;
 
 import java.io.IOException;
 
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import dao.MyDao;
 import dto.Doctor;
 
-@WebServlet("/changedoctorstatus")
-public class ChangeDoctorStatus extends HttpServlet {
+@WebServlet("/admindoctorstatus")
+public class DoctorStatus extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = Integer.parseInt(req.getParameter("id"));

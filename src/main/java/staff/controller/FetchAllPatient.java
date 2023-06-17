@@ -1,4 +1,4 @@
-package controller;
+package staff.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import dao.MyDao;
 import dto.Patient;
 
-@WebServlet("/adminfetcallpatient")
-public class AdminfetchAllPatient extends HttpServlet {
+@WebServlet("/fetchallpatient")
+public class FetchAllPatient extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		if(req.getSession().getAttribute("admin")==null)
+		if(req.getSession().getAttribute("staff")==null)
 		{
 			resp.getWriter().print("<h1 style='color:red'>Session Expired</h1>");
 			req.getRequestDispatcher("Login.html").include(req, resp);
@@ -27,13 +27,12 @@ public class AdminfetchAllPatient extends HttpServlet {
 			if(list.isEmpty())
 			{
 				resp.getWriter().print("<h1 style='color:red'>No Patient Data Found</h1>");
-				req.getRequestDispatcher("AdminHome.html").include(req, resp);
+				req.getRequestDispatcher("BookAppointment.jsp").include(req, resp);
 			}
 			else{
 				req.setAttribute("list", list);
-				req.getRequestDispatcher("ViewPatientHistory.jsp").forward(req, resp);
+				req.getRequestDispatcher("PatientList.jsp").forward(req, resp);
 			}
 		}
 	}
-
 }

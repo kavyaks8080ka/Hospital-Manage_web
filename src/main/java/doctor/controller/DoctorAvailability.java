@@ -1,4 +1,4 @@
-package controller;
+package doctor.controller;
 
 import java.io.IOException;
 
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import dao.MyDao;
 import dto.Doctor;
 
-@WebServlet("/changedoctoravailable")
-public class ChangeDoctorAvailability extends HttpServlet {
+@WebServlet("/doctoravailable")
+public class DoctorAvailability extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Doctor doctor =(Doctor) req.getSession().getAttribute("doctor");

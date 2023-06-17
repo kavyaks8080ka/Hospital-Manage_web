@@ -1,4 +1,4 @@
-package controller;
+package doctor.controller;
 
 import java.io.IOException;
 import java.sql.Date;
