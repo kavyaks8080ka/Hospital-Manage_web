@@ -17,7 +17,7 @@
 		Patient patient = dao.fetchPatient(pid);
 		List<Appointment> list = patient.getAppointments();
 		if (list.isEmpty()) {
-			response.getWriter().print("<h1>No Apppoinments Yet</h1>");
+			response.getWriter().print("<h1 style='color:red'>No Apppoinments Yet</h1>");
 			request.setAttribute("list", dao.fetchAllPatient());
 			request.getRequestDispatcher("ViewPatientHistory.jsp").include(request, response);
 		} else {
