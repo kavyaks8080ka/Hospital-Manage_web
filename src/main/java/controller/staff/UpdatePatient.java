@@ -20,22 +20,21 @@ public class UpdatePatient extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = Integer.parseInt(req.getParameter("id"));
 		String name = req.getParameter("name");
-		long mobile = Long.parseLong(req.getParameter("mobile"));
 		Date dob = Date.valueOf(req.getParameter("dob"));
 		int age = Period.between(dob.toLocalDate(), LocalDate.now()).getYears();
 
 		MyDao dao = new MyDao();
 
 		Patient patient = dao.fetchPatient(id);
-		
-			patient.setAge(age);
-			patient.setDob(dob);
-			patient.setName(name);
 
-			dao.updatePatient(patient);
+		patient.setAge(age);
+		patient.setDob(dob);
+		patient.setName(name);
 
-			resp.getWriter().print("<h1 style='color:green'>Patient Data Updated Successfully</h1>");
-			req.getRequestDispatcher("StaffHome.html").include(req, resp);
-		
+		dao.updatePatient(patient);
+
+		resp.getWriter().print("<h1 style='color:green'>Patient Data Updated Successfully</h1>");
+		req.getRequestDispatcher("StaffHome.html").include(req, resp);
+
 	}
 }
