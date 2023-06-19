@@ -27,7 +27,7 @@
 <th><%=staff.getAge()%></th>
 <th><%=staff.isStatus()%></th>
 
-<th><a href="changestaffstatus?id=<%=staff.getId()%>"><button>Change Status</button></a></th>
+<th><a href="adminstaffstatus?id=<%=staff.getId()%>"><button>Change Status</button></a></th>
 
 </tr>
 <%} %>

@@ -27,7 +27,7 @@
 <th><%=doctor.getAge()%></th>
 <th><%=doctor.isStatus()%></th>
 
-<th><a href="changedoctorstatus?id=<%=doctor.getId()%>"><button>Change Status</button></a></th>
+<th><a href="admindoctorstatus?id=<%=doctor.getId()%>"><button>Change Status</button></a></th>
 
 </tr>
 <%} %>

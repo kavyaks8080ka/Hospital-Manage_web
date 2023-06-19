@@ -51,7 +51,10 @@
 		<%}%>
 	</table>
 	<br>
-	<a href="adminfetcallpatient"><button>Back</button></a>
-	<%} %>
+	<%if(session.getAttribute("admin")!=null){ %>
+	<a href="adminfetchallpatient"><button>Back</button></a>
+	<%}else{ %>
+	<a href="staffetchpatienthistory"><button>Back</button></a>
+	<%}} %>
 </body>
 </html>

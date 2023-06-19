@@ -1,4 +1,4 @@
-package doctor.controller;
+package controller.doctor;
 
 import java.io.IOException;
 

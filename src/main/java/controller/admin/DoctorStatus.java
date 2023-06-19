@@ -1,4 +1,4 @@
-package admin.controller;
+package controller.admin;
 
 import java.io.IOException;
 
@@ -9,24 +9,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.MyDao;
-import dto.Staff;
+import dto.Doctor;
 
-@WebServlet("/adminstaffstatus")
-public class StaffStatus extends HttpServlet {
+@WebServlet("/admindoctorstatus")
+public class DoctorStatus extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = Integer.parseInt(req.getParameter("id"));
 		MyDao dao = new MyDao();
-		Staff staff = dao.fetchStaff(id);
-		if (staff.isStatus())
-			staff.setStatus(false);
+		Doctor doctor = dao.fetchDoctor(id);
+		if (doctor.isStatus())
+			doctor.setStatus(false);
 		else
-			staff.setStatus(true);
+			doctor.setStatus(true);
 
-		dao.updateStaff(staff);
+		dao.updateDoctor(doctor);
 
 		resp.getWriter().print("<h1 style='color:green'>Status Updated</h1>");
-		req.setAttribute("list", dao.fetchAllStaff());
-		req.getRequestDispatcher("ApproveStaff.jsp").include(req, resp);
+		req.setAttribute("list", dao.fetchAllDoctor());
+		req.getRequestDispatcher("ApproveDoctor.jsp").include(req, resp);
 	}
 }

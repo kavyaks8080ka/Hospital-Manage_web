@@ -1,4 +1,4 @@
-package staff.controller;
+package controller.staff;
 
 import java.io.IOException;
 import java.sql.Date;

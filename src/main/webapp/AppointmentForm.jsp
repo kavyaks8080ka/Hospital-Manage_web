@@ -46,6 +46,8 @@ Select Doctor:
 <br>
 <button>Fix Appointment</button><button type="reset">Cancel</button>
 </form>
-<%}} %>
+<%} %>
+<a href="fetchallpatient"><button>Back</button></a>
+<%} %>
 </body>
 </html>
