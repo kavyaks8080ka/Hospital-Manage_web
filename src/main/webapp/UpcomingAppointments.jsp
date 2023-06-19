@@ -49,7 +49,7 @@
 				src="data:image/jpeg;base64,<%=base64%>">
 			</th>
 			<th><%=appointment.getProblem()%></th>
-			<th><button>Check</button></th>
+			<th><a href="checkappointment?id=<%=appointment.getId()%>"><button>Check</button></a></th>
 		</tr>
 		<%
 			}

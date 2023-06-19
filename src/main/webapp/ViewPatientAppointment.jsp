@@ -19,7 +19,10 @@
 		if (list.isEmpty()) {
 			response.getWriter().print("<h1 style='color:red'>No Apppoinments Yet</h1>");
 			request.setAttribute("list", dao.fetchAllPatient());
+			if(session.getAttribute("admin")!=null  && session.getAttribute("staff")==null)
 			request.getRequestDispatcher("ViewPatientHistory.jsp").include(request, response);
+			else
+			request.getRequestDispatcher("ViewPatientHistory2.jsp").include(request, response);
 		} else {
 	%>
 
@@ -51,7 +54,7 @@
 		<%}%>
 	</table>
 	<br>
-	<%if(session.getAttribute("admin")!=null){ %>
+	<%if(session.getAttribute("admin")!=null  && session.getAttribute("staff")==null){ %>
 	<a href="adminfetchallpatient"><button>Back</button></a>
 	<%}else{ %>
 	<a href="staffetchpatienthistory"><button>Back</button></a>

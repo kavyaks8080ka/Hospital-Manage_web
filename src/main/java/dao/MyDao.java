@@ -122,13 +122,12 @@ public class MyDao {
 	public Doctor fetchDoctor(int id) {
 		return manager.find(Doctor.class, id);
 	}
-	
+
 	public Patient fetchPatient(int id) {
 		return manager.find(Patient.class, id);
 	}
-	
-	public List<Doctor> fetchAvailableDoctors()
-	{
+
+	public List<Doctor> fetchAvailableDoctors() {
 		return manager.createQuery("select x from Doctor x where available=true").getResultList();
 	}
 
@@ -138,4 +137,13 @@ public class MyDao {
 		transaction.commit();
 	}
 
+	public void updateAppointment(Appointment appointment) {
+		transaction.begin();
+		manager.merge(appointment);
+		transaction.commit();
+	}
+
+	public Appointment fetchAppointment(int id) {
+		return manager.find(Appointment.class, id);
+	}
 }
