@@ -1,7 +1,7 @@
 <%@page import="org.apache.commons.codec.binary.Base64"%>
-<%@page import="dto.Appointment"%>
+<%@page import="todo.dto.Appointment"%>
 <%@page import="java.util.List"%>
-<%@page import="dto.Doctor"%>
+<%@page import="todo.dto.Doctor"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>

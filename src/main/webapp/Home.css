@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+
+body
+{
+	background-image:url(https://media.istockphoto.com/id/1369661892/photo/businessman-holding-virtual-blue-plus-sign-for-positive-thinking-mindset-or-healthcare.jpg?s=612x612&w=0&k=20&c=Hnx-TUmTDgtS-7G_nFrM8B22BUrhTK0xet7Ot-e8GVk=);
+	background-repeat:no-repeat;
+	    background-size: 100% 100vh;
+	
+	
+}
+h1{
+    font-size: 60px;
+    color:white;
+    font-family:'Times New Roman', Times, serif;
+    position: relative;
+    top:100px;
+    left:25%;
+}
+a
+{
+    height:100px;
+    width: 200px;
+    position: relative;
+    left :400px;
+    top:180px;
+    margin:15px;
+    background-color: cadetblue;
+    border-radius:5px ;
+    font-weight: bolder;
+    box-shadow: 15px 10px 5px black;
+
+    
+}

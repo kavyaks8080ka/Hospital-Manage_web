@@ -1,4 +1,4 @@
-<%@page import="dto.Doctor"%>
+<%@page import="todo.dto.Doctor"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
